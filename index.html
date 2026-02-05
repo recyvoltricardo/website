@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -354,4 +355,357 @@
         });
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recyvolt - Reciclagem Fotovoltaica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #fcfcfc; }
+        .chart-container { position: relative; width: 100%; max-width: 600px; margin: 0 auto; height: 350px; }
+        .recyvolt-gradient { background: linear-gradient(135deg, #111827 0%, #1f2937 100%); }
+        .yellow-accent { color: #facc15; }
+        .bg-yellow-accent { background-color: #facc15; }
+        .border-yellow-accent { border-color: #facc15; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 24px -10px rgba(0,0,0,0.15); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        html { scroll-behavior: smooth; }
+    </style>
+    <!-- Chosen Palette: Recyvolt Industrial - Yellow-400 (Primary), Slate-950 (Dark), Zinc (Neutrals) -->
+    <!-- Application Structure Plan: 
+         Dashboard focado em expansão e parcerias.
+         1. Header & Hero: Branding industrial forte.
+         2. Simulador: Projeção de impacto imediato.
+         3. Vantagem Técnica: Foco na infraestrutura robusta.
+         4. Análise Estratégica: Foco total em Forças e Oportunidades (removendo pontos negativos).
+         5. Contacto: Nova secção para conversão direta via e-mail.
+         Rationale: Uma abordagem puramente positiva aumenta a confiança do investidor/parceiro e o formulário facilita a recolha de leads. -->
+    <!-- Visualization & Content Choices: 
+         1. Doughnut Chart: Composição metálica.
+         2. Bar Chart: Massa recuperada dinâmica.
+         3. Contact Form: Utiliza mailto: para envio direto para ricardo@recyvolt.com.
+         CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body class="text-slate-800">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50 border-b-4 border-yellow-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <span class="text-3xl font-black tracking-tighter text-slate-950 italic">RECY<span class="text-yellow-400">VOLT</span> <span class="text-xs align-top ml-1">⚡</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="#simulador" class="text-slate-900 hover:text-yellow-500 font-bold uppercase text-sm tracking-widest">Simulador</a>
+                    <a href="#infraestrutura" class="text-slate-900 hover:text-yellow-500 font-bold uppercase text-sm tracking-widest">Tecnologia</a>
+                    <a href="#estrategia" class="text-slate-900 hover:text-yellow-500 font-bold uppercase text-sm tracking-widest">Estratégia</a>
+                    <a href="#contacto" class="text-slate-900 hover:text-yellow-500 font-bold uppercase text-sm tracking-widest">Reciclar Agora</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="recyvolt-gradient text-white py-24 relative overflow-hidden">
+        <div class="absolute right-0 top-0 opacity-10 text-[300px] font-black pointer-events-none select-none">VOLT</div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-block bg-yellow-400 text-slate-950 px-4 py-1 rounded-sm font-black text-sm mb-6 uppercase tracking-widest">Parceiro Estratégico</div>
+                <h1 class="text-5xl md:text-7xl font-black mb-8 leading-none italic uppercase">Liderança na <br><span class="text-yellow-400">Economia Solar</span></h1>
+                <p class="text-xl text-slate-300 mb-10 leading-relaxed">
+                    A Recyvolt oferece a solução industrial mais eficiente para a reciclagem de painéis solares em Portugal. Tecnologia de ponta, processos sustentáveis e valorização máxima de materiais.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contacto" class="bg-yellow-400 hover:bg-white text-slate-950 px-10 py-4 rounded-md font-black uppercase tracking-tighter transition-all">
+                        Iniciar Parceria ⚡
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-32">
+
+        <!-- Section 1: Interactive Simulator -->
+        <section id="simulador" class="scroll-mt-28">
+            <div class="mb-12 border-l-8 border-yellow-400 pl-6">
+                <h2 class="text-4xl font-black text-slate-950 uppercase italic mb-2">Calculadora de Recuperação</h2>
+                <p class="text-lg text-slate-600">Projeção imediata de ativos recuperados através do nosso processo mecânico.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 bg-zinc-50 p-8 rounded-xl shadow-inner border border-zinc-200">
+                <div class="lg:col-span-4 space-y-6">
+                    <div class="bg-white p-8 rounded-lg shadow-sm border-t-4 border-yellow-400">
+                        <label class="block text-xs font-black text-slate-500 mb-2 uppercase tracking-widest">Número de Painéis (20kg cada)</label>
+                        <input type="number" id="panelInput" value="1000" min="1" class="w-full text-4xl font-black p-4 border-2 border-slate-100 rounded-lg focus:border-yellow-400 outline-none transition-all">
+                        
+                        <div class="mt-10 space-y-4">
+                            <h3 class="text-sm font-black text-slate-400 uppercase tracking-widest mb-4">Total Processado</h3>
+                            <div class="flex justify-between items-end">
+                                <span class="text-slate-500 font-semibold">Peso Bruto:</span>
+                                <span class="text-3xl font-black text-slate-950" id="totalWeightDisplay">20.000 kg</span>
+                            </div>
+                            <div class="h-2 w-full bg-slate-200 rounded-full overflow-hidden">
+                                <div class="h-full bg-yellow-400" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 text-white p-6 rounded-lg border-l-4 border-yellow-400">
+                        <h4 class="font-black text-yellow-400 uppercase text-xs mb-3 tracking-widest">Valor de Saída</h4>
+                        <p class="text-sm text-slate-400 italic">
+                            O nosso processo isola o Alumínio e o Vidro com elevado grau de pureza, garantindo a sua rápida reintrodução na indústria nacional.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                        <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-6 text-center">Eficiência de Massa (%)</h4>
+                        <div class="chart-container">
+                            <canvas id="compositionChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                        <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-6 text-center">Recuperação Projetada (kg)</h4>
+                        <div class="chart-container">
+                            <canvas id="recoveryChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Technology -->
+        <section id="infraestrutura" class="scroll-mt-28">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2 space-y-6">
+                    <h2 class="text-4xl font-black text-slate-950 uppercase italic leading-none">Poder Industrial <br><span class="text-yellow-500">Recyvolt</span></h2>
+                    <p class="text-lg text-slate-600 leading-relaxed italic font-semibold">
+                        Operamos com a maior linha de processamento mecânico de painéis solares em Portugal.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-slate-100 p-6 rounded-lg border-l-4 border-slate-400">
+                            <span class="block text-2xl font-black">1000m²</span>
+                            <span class="text-xs uppercase font-bold text-slate-500 tracking-widest">Hub Logístico</span>
+                        </div>
+                        <div class="bg-slate-100 p-6 rounded-lg border-l-4 border-yellow-400">
+                            <span class="block text-2xl font-black">25m</span>
+                            <span class="text-xs uppercase font-bold text-slate-500 tracking-widest">Linha de Separação</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 space-y-4">
+                    <div class="bg-slate-900 p-6 rounded-xl text-white shadow-lg">
+                        <h3 class="text-xl font-black uppercase text-yellow-400 mb-2 italic">95% Eficiência</h3>
+                        <p class="text-slate-400 text-sm">Recuperação quase total dos componentes, transformando resíduos em lucro sustentável.</p>
+                    </div>
+                    <div class="bg-white border-2 border-slate-200 p-6 rounded-xl text-slate-950 shadow-md">
+                        <h3 class="text-xl font-black uppercase mb-2 italic">Zero Químicos</h3>
+                        <p class="text-slate-500 text-sm">O nosso processo mecânico frio garante que não há emissões nocivas para o meio ambiente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: SWOT (Positive Only) -->
+        <section id="estrategia" class="scroll-mt-28 bg-slate-950 p-12 rounded-3xl text-white overflow-hidden relative">
+            <div class="absolute right-0 top-0 opacity-5 font-black text-[20rem] pointer-events-none italic">WIN</div>
+            <div class="relative z-10 space-y-12">
+                <div>
+                    <h2 class="text-4xl font-black uppercase italic mb-4 tracking-tighter">Posicionamento Estratégico</h2>
+                    <p class="text-slate-400 text-lg max-w-2xl italic">Porquê a Recyvolt é o parceiro ideal para o seu parque solar ou frota instalada.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-black text-yellow-400 uppercase tracking-widest border-b-2 border-yellow-400 inline-block pb-2">Forças</h3>
+                        <div class="space-y-4">
+                            <div class="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-yellow-400 transition-colors">
+                                <h4 class="font-black uppercase mb-1">Engenharia Mecânica Superior</h4>
+                                <p class="text-sm text-slate-400 italic">Separação de materiais por densidade e granulometria sem solventes.</p>
+                            </div>
+                            <div class="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-yellow-400 transition-colors">
+                                <h4 class="font-black uppercase mb-1">Capacidade de Escala</h4>
+                                <p class="text-sm text-slate-400 italic">Armazém de 1000m² preparado para receções volumosas de parques solares.</p>
+                            </div>
+                            <div class="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-yellow-400 transition-colors">
+                                <h4 class="font-black uppercase mb-1">Conformidade Total</h4>
+                                <p class="text-sm text-slate-400 italic">Gestão de resíduos em total alinhamento com as normas REEE em vigor.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-black text-yellow-400 uppercase tracking-widest border-b-2 border-yellow-400 inline-block pb-2">Oportunidades</h3>
+                        <div class="space-y-4">
+                            <div class="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-yellow-400 transition-colors">
+                                <h4 class="font-black uppercase mb-1">Expansão do Mercado Fotovoltaico</h4>
+                                <p class="text-sm text-slate-400 italic">Crescimento exponencial de painéis em fim de vida nos próximos 5 anos.</p>
+                            </div>
+                            <div class="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-yellow-400 transition-colors">
+                                <h4 class="font-black uppercase mb-1">Diretivas Europeias</h4>
+                                <p class="text-sm text-slate-400 italic">Novas regulamentações que exigem reciclagem obrigatória e rastreabilidade.</p>
+                            </div>
+                            <div class="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-yellow-400 transition-colors">
+                                <h4 class="font-black uppercase mb-1">Valorização de Matérias-Primas</h4>
+                                <p class="text-sm text-slate-400 italic">Escassez global de alumínio e silício aumenta o valor dos materiais recuperados.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Contact Form -->
+        <section id="contacto" class="scroll-mt-28 py-10">
+            <div class="bg-yellow-400 rounded-3xl p-10 md:p-16 shadow-2xl relative overflow-hidden">
+                <div class="max-w-4xl mx-auto relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="space-y-6">
+                        <h2 class="text-4xl md:text-5xl font-black text-slate-950 uppercase italic leading-none">Pretende Reciclar Painéis?</h2>
+                        <p class="text-slate-900 text-lg font-bold">Inicie o seu processo de reciclagem hoje mesmo. A nossa equipa entrará em contacto para coordenar a logística e receção.</p>
+                        <div class="pt-4 space-y-2">
+                            <p class="text-slate-950 font-black uppercase text-xs tracking-widest">E-mail Direto</p>
+                            <p class="text-2xl font-black italic">ricardo@recyvolt.com</p>
+                        </div>
+                        <div class="pt-4 space-y-2">
+                            <p class="text-slate-950 font-black uppercase text-xs tracking-widest">Telemóvel</p>
+                            <p class="text-2xl font-black italic">+351 91 422 88 71</p>
+                        </div>
+                    </div>
+                    
+                    <form onsubmit="handleContact(event)" class="bg-white p-8 rounded-2xl shadow-xl space-y-4">
+                        <div>
+                            <label class="block text-[10px] font-black uppercase text-slate-400 mb-1">Nome / Empresa</label>
+                            <input type="text" id="contactName" required class="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:border-yellow-400 outline-none font-bold" placeholder="Nome Completo">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-black uppercase text-slate-400 mb-1">Volume Estimado (Painéis)</label>
+                            <input type="number" id="contactVolume" required class="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:border-yellow-400 outline-none font-bold" placeholder="Ex: 500">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-black uppercase text-slate-400 mb-1">Observações</label>
+                            <textarea id="contactMsg" rows="3" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:border-yellow-400 outline-none font-bold" placeholder="Notas adicionais..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-slate-950 text-white font-black uppercase py-4 rounded-lg hover:bg-slate-800 transition-colors tracking-widest italic">
+                            Enviar Pedido ⚡
+                        </button>
+                        <p class="text-[9px] text-center text-slate-400 uppercase font-bold mt-4 italic">Ao clicar, será preparado um e-mail automático.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-white py-20 border-t-8 border-yellow-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
+                <div class="space-y-4">
+                    <span class="text-4xl font-black tracking-tighter italic uppercase">RECY<span class="text-yellow-400">VOLT</span>⚡</span>
+                    <p class="text-slate-500 max-w-sm">Especialistas em recuperação mecânica de ativos fotovoltaicos.</p>
+                </div>
+                <div class="text-slate-500 text-sm md:text-right font-medium">
+                    <p>RECYVOLT PORTUGAL</p>
+                    <p>ricardo@recyvolt.com</p>
+                    <p class="mt-8">&copy; 2026 Recyvolt. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const PANEL_WEIGHT_KG = 20;
+        const colors = { yellow: '#facc15', slate: '#111827', zinc: '#71717a', amber: '#d97706' };
+
+        let recoveryChartInstance = null;
+        let compositionChartInstance = null;
+
+        function updateCalculations() {
+            const inputVal = document.getElementById('panelInput').value;
+            const panelCount = inputVal ? parseInt(inputVal) : 0;
+            const totalWeight = panelCount * PANEL_WEIGHT_KG;
+            
+            const glassKg = totalWeight * 0.75;
+            const aluminumKg = totalWeight * 0.14;
+            const polymersKg = totalWeight * 0.10;
+            const metalsKg = totalWeight * 0.01;
+
+            document.getElementById('totalWeightDisplay').innerText = totalWeight.toLocaleString('pt-PT') + ' kg';
+
+            if (recoveryChartInstance) {
+                recoveryChartInstance.data.datasets[0].data = [glassKg, aluminumKg, polymersKg, metalsKg];
+                recoveryChartInstance.update();
+            }
+        }
+
+        function handleContact(e) {
+            e.preventDefault();
+            const name = document.getElementById('contactName').value;
+            const vol = document.getElementById('contactVolume').value;
+            const msg = document.getElementById('contactMsg').value;
+            
+            const subject = encodeURIComponent(`Pedido de Reciclagem - ${name}`);
+            const body = encodeURIComponent(`Olá Ricardo,\n\nTenho interesse em reciclar painéis com a Recyvolt.\n\nNome/Empresa: ${name}\nVolume Estimado: ${vol} unidades\n\nNotas Adicionais: ${msg}\n\nAguardo contacto.`);
+            
+            window.location.href = `mailto:ricardo@recyvolt.com?subject=${subject}&body=${body}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const ctxComp = document.getElementById('compositionChart').getContext('2d');
+            compositionChartInstance = new Chart(ctxComp, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Vidro (75%)', 'Alumínio (14%)', 'Polímeros (10%)', 'Silício/Metais (1%)'],
+                    datasets: [{
+                        data: [75, 14, 10, 1],
+                        backgroundColor: [colors.zinc, colors.yellow, colors.amber, colors.slate],
+                        borderWidth: 4,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'bottom', labels: { font: { weight: 'bold' }, padding: 15 } } },
+                    cutout: '70%'
+                }
+            });
+
+            const ctxRec = document.getElementById('recoveryChart').getContext('2d');
+            recoveryChartInstance = new Chart(ctxRec, {
+                type: 'bar',
+                data: {
+                    labels: ['Vidro', 'Alumínio', 'Polímeros', 'Metais'],
+                    datasets: [{
+                        label: 'Massa Estimada (kg)',
+                        data: [0, 0, 0, 0],
+                        backgroundColor: [colors.slate, colors.yellow, colors.slate, colors.slate],
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { grid: { display: false }, ticks: { font: { weight: 'bold' } } },
+                        x: { grid: { display: false }, ticks: { font: { weight: 'bold' } } }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+
+            document.getElementById('panelInput').addEventListener('input', updateCalculations);
+            updateCalculations();
+        });
+    </script>
+</body>
+>>>>>>> 134ab117a73997b83bb9f02f9d094088e747e0ed
 </html>
